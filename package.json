@@ -49,7 +49,7 @@
       }
     ]
   },
-  "main": "src/out/main.js",
+  "main": "out/main.js",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p .",
