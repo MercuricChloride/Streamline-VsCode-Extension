@@ -1,0 +1,87 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Streamline",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#specials"
+		},
+		{
+			"include": "#literals"
+		},
+		{
+			"include": "#attributes"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+				"name": "keyword.control.streamline",
+				"match": "\\b(if|while|for|return|sfn|mfn|get|set|delete|import)\\b"
+				},
+				{
+					"name": "keyword.operator.streamline",
+					"match": "\\b(\\+|\\-|\\*|\\/|\\.)\\b"
+				},
+				{
+					"name": "constant.language.streamline",
+					"match": "\\|\\>"
+				}
+
+		]
+		},
+		"strings": {
+			"name": "string.quoted.double.streamline",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.streamline",
+					"match": "\\\\."
+				}
+			]
+		},
+		"literals": {
+			"name": "constant.numeric.streamline",
+			"patterns": [
+				{
+					"name": "constant.character.streamline",
+					"match": "\\b0x[a-fA-F0-9]{40}\\b"
+				},
+				{
+					"name": "constant.numeric.streamline",
+					"match": "\\b[0-9]+\\b"
+				}
+			]
+		},
+		"specials": {
+			"name": "keyword.other.streamline",
+			"patterns": [
+				{
+					"name": "constant.character.escape.streamline",
+					"match": "\\b(EVENTS)\\b"
+				}
+			]			
+		},
+		"attributes": {
+			"name": "storage.modifier.streamline",
+			"patterns": [
+				{
+					"name": "storage.modifier.immutable.streamline",
+					"match": "\\@immutable\\s"
+				},
+				{
+					"name": "storage.modifier.startBlock.streamline",
+					"match": "\\@startBlock \\d+"
+				}
+			]
+		}
+	},
+	"scopeName": "source.streamline"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "streamline-language",
+  "displayName": "Streamline Language",
+  "description": "Support for streamline in Visual Studio Code. Built with <3 by Spyglass Labs.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "streamline",
+        "aliases": [
+          "Streamline",
+          "streamline"
+        ],
+        "extensions": [
+          "strm"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/soulbound-thick-s.svg",
+          "dark": "./icons/soulbound-thick-s.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "streamline",
+        "scopeName": "source.streamline",
+        "path": "./syntaxes/streamline.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "streamline.build.currentFile",
+        "title": "Streamline: Build the Current Streamline File"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "streamline",
+        "path": "./snippets.json"
+      }
+    ]
+  },
+  "main": "src/out/main.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./src/",
+    "watch": "tsc -watch -p ./src/"
+  },
+  "devDependencies": {
+    "@types/node": "^8.10.25",
+    "@types/vscode": "^1.51.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  }
+}

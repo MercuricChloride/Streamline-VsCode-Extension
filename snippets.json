@@ -1,0 +1,66 @@
+{
+	"Create a new MFN Module": {
+		"prefix": "mfn",
+		"body": [
+			"mfn $1 = [$2]",
+			"    |> $3;"
+		],
+		"description": "Create an MFN module"
+	},
+    "Create a new SFN Module": {
+		"prefix": "sfn",
+		"body": [
+			"sfn $1 = [$2]",
+			"    |> $3;"
+		],
+		"description": "Create an MFN module"
+	},
+    "Create an immutable tag for a store module": {
+        "prefix": "immutable",
+        "body": [
+            "@immutable"
+        ]
+    },
+    "Add a new start block tag": {
+		"prefix": "startBlock",
+		"body": [
+			"@startBlock $1"
+		],
+		"description": "Create a start block tag"
+	},
+    "Import": {
+		"prefix": "import",
+		"body": [
+			"import \"$1\";"
+		],
+		"description": "Import a interface file"
+	},
+    "Instance": {
+		"prefix": "instance",
+		"body": [
+			"$1 = $2($3);"
+		],
+		"description": "Create a new instance of a contract"
+	},
+    "Pipe": {
+		"prefix": "pipe",
+		"body": [
+			"|> $1"
+		],
+		"description": "Insert a pipe character"
+	},
+    "Higher Order Function": {
+		"prefix": "hof",
+		"body": [
+			"|> $1 ($2) => $3;"
+		],
+		"description": "Insert a higher order function (map, filter, reduce)"
+	},
+    "Lambda": {
+		"prefix": "lambda",
+		"body": [
+			"|> ($1) => $2;"
+		],
+		"description": "Insert a simple function application (lambda)."
+	}
+}
