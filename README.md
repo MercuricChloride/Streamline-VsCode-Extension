@@ -1,6 +1,7 @@
-# streamline-language README
+# Streamline Language Extension for Visual Studio Code
 
-This is the README for your extension "streamline-language". After writing up a brief description, we recommend including the following sections.
+This is the official language extension to add Streamline support to visual studio code.
+As always, made with <3 by your friends at Spyglass Labs!
 
 ## Features
 
