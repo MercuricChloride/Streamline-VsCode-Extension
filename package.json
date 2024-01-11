@@ -22,8 +22,8 @@
         ],
         "configuration": "./language-configuration.json",
         "icon": {
-          "light": "./icons/soulbound-thick-s.svg",
-          "dark": "./icons/soulbound-thick-s.svg"
+          "light": "./icons/soulbound-thick-s.png",
+          "dark": "./icons/soulbound-thick-s.png"
         }
       }
     ],
