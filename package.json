@@ -4,7 +4,8 @@
   "displayName": "Streamline Language",
   "description": "Support for streamline in Visual Studio Code. Built with <3 by Spyglass Labs.",
   "repository": "https://github.com/MercuricChloride/Streamline-VsCode-Extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "icon": "./icons/logo.jpg",
   "engines": {
     "vscode": "^1.85.0"
   },
