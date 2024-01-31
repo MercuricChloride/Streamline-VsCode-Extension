@@ -22,8 +22,16 @@
 		"keywords": {
 			"patterns": [
 				{
-				"name": "keyword.control.streamline",
-				"match": "\\b(if|while|for|return|sfn|mfn|get|set|delete|import)\\b"
+					"name": "entity.name.function",
+					"match": "\\b(sfn|mfn|fn)\\b\\s+(\\w+)\\s+=",
+					"captures": {
+						"1": {"name": "entity.name.function"},
+						"2": {"name": "entity.name.tag"}
+					}
+				},
+				{
+					"name": "keyword.control.streamline",
+					"match": "\\b(if|while|for|return|get|set|delete|import|uint|bytes|string)\\b"
 				},
 				{
 					"name": "keyword.operator.streamline",
@@ -32,9 +40,17 @@
 				{
 					"name": "constant.language.streamline",
 					"match": "\\|\\>"
+				},
+				{
+					"name": "constant.language.source.streamline",
+					"match": "(\\w+)\\s+=\\s+(\\w+)\\((.*\\));",
+					"captures": {
+						"1": { "name": "variable.name"},
+						"2": { "name": "entity.name.class"},
+						"3": { "name": "constant.numeric"}
+					}
 				}
-
-		]
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.streamline",
@@ -48,7 +64,7 @@
 			]
 		},
 		"literals": {
-			"name": "constant.numeric.streamline",
+			"name": "constant.numeric",
 			"patterns": [
 				{
 					"name": "constant.character.streamline",
@@ -66,8 +82,12 @@
 				{
 					"name": "constant.character.escape.streamline",
 					"match": "\\b(EVENTS)\\b"
+				},
+				{
+					"name": "constant.character.escape.streamline",
+					"match": "\\b(BLOCK)\\b"
 				}
-			]			
+			]
 		},
 		"attributes": {
 			"name": "storage.modifier.streamline",
@@ -79,6 +99,10 @@
 				{
 					"name": "storage.modifier.startBlock.streamline",
 					"match": "\\@startBlock \\d+"
+				},
+				{
+					"name": "storage.modifier.var.streamline",
+					"match": "@var\\s+(\\b\\S+\\b)\\s*=\\s*(\\S*)+\\s*\\n"
 				}
 			]
 		}

@@ -62,5 +62,12 @@
 			"|> ($1) => $2;"
 		],
 		"description": "Insert a simple function application (lambda)."
+	},
+	"Block": {
+		"prefix": "blk",
+		"body": [
+			"BLOCK"
+		],
+		"description": "Insert the BLOCK keyword"
 	}
 }

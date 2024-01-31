@@ -44,6 +44,17 @@
         "title": "Streamline: Build the Current Streamline File"
       }
     ],
+    "autoClosingPairs": [
+      { "open": "{", "close": "}" },
+      { "open": "[", "close": "]" },
+      { "open": "(", "close": ")" }
+    ],
+    "onEnterRules": [
+      {
+        "beforeText": "^\\|\\>.*",
+        "action": { "appendText": "|>" }
+      }
+    ],
     "snippets": [
       {
         "language": "streamline",
