@@ -31,7 +31,7 @@
 				},
 				{
 					"name": "keyword.control.streamline",
-					"match": "\\b(if|while|for|return|get|set|delete|import|uint|bytes|string|in|const)\\b"
+					"match": "\\b(if|while|for|return|get|set|delete|import|uint|bytes|string|in|const|let)\\b"
 				},
 				{
 					"name": "keyword.operator.streamline",
