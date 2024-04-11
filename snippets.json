@@ -2,72 +2,83 @@
 	"Create a new MFN Module": {
 		"prefix": "mfn",
 		"body": [
-			"mfn $1 = [$2]",
-			"    |> $3;"
+			"mfn $1 ($2) {",
+			"    $3",
+			"}"
 		],
 		"description": "Create an MFN module"
 	},
     "Create a new SFN Module": {
 		"prefix": "sfn",
 		"body": [
-			"sfn $1 = [$2]",
-			"    |> $3;"
+			"sfn $1 ($2, s:$3) {",
+			"    $4",
+			"}"
 		],
-		"description": "Create an MFN module"
+		"description": "Create an SFN module"
 	},
-    "Create an immutable tag for a store module": {
-        "prefix": "immutable",
-        "body": [
-            "@immutable"
-        ]
-    },
-    "Add a new start block tag": {
-		"prefix": "startBlock",
+	"Create a new Store Add Module": {
+		"prefix": ["store_add, sadd"],
 		"body": [
-			"@startBlock $1"
+			"sfn $1 ($2, s:add) {",
+			"    $3",
+			"}"
 		],
-		"description": "Create a start block tag"
+		"description": "Create a store add module"
 	},
-    "Import": {
-		"prefix": "import",
+	"Create a new Store Set Module": {
+		"prefix": ["store-set, sset"],
 		"body": [
-			"import \"$1\";"
+			"sfn $1 ($2, s:set) {",
+			"    $3",
+			"}"
 		],
-		"description": "Import a interface file"
+		"description": "Create a store set module"
 	},
-    "Instance": {
-		"prefix": "instance",
+	"Create a new Store SetOnce Module": {
+		"prefix": ["store-set-once, ssetOnce"],
 		"body": [
-			"$1 = $2($3);"
+			"sfn $1 ($2, s:setOnce) {",
+			"    $3",
+			"}"
 		],
-		"description": "Create a new instance of a contract"
+		"description": "Create a store setOnce module"
 	},
-    "Pipe": {
-		"prefix": "pipe",
+	"for": {
+		"prefix": ["for","for-in"],
 		"body": [
-			"|> $1"
+			"for ${1:var} in ${2:sequence} {",
+			"${3:body}",
+			"}"
 		],
-		"description": "Insert a pipe character"
+		"description": "Inserts a for loop for iterating over a list"
 	},
-    "Higher Order Function": {
-		"prefix": "hof",
+	"method": {
+		"prefix": ["method"],
 		"body": [
-			"|> $1 ($2) => $3;"
+			"method $1($2) {",
+			"$3",
+			"}"
 		],
-		"description": "Insert a higher order function (map, filter, reduce)"
+		"description": "Defines a new method"
 	},
-    "Lambda": {
-		"prefix": "lambda",
+	"fn": {
+		"prefix": ["fn", "function"],
 		"body": [
-			"|> ($1) => $2;"
+			"fn $1($2) {",
+			"$3",
+			"}"
 		],
-		"description": "Insert a simple function application (lambda)."
+		"description": "Defines a new method"
 	},
-	"Block": {
-		"prefix": "blk",
-		"body": [
-			"BLOCK"
-		],
-		"description": "Insert the BLOCK keyword"
+	"global": {
+		"prefix": "global",
+		"body": "global::$1",
+		"description": "Inserts a global variable"
+	},
+	"params": {
+		"prefix": ["params", "PARAMS"],
+		"body": "PARAMS$1",
+		"description": "Inserts the PARAMS object"
 	}
 }
