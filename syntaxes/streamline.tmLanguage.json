@@ -16,6 +16,9 @@
 		},
 		{
 			"include": "#attributes"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
@@ -91,6 +94,23 @@
 				{
 					"name": "storage.modifier.immutable.streamline",
 					"match": "(\\w+):(add|setOnce|set)"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.streamline",
+					"match": "\\/\\/.*"
+				},
+				{
+					"name": "comment.block.documentation",
+					"match": "\\/\\/\\/.*"
+				},
+				{
+					"name": "comment.block",
+					"begin": "\\/\\*",
+					"end": "\\*\\/"
 				}
 			]
 		}
